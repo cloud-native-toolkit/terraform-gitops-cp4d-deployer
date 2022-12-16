@@ -1,5 +1,5 @@
 locals {
-  name          = "my-module"
+  name          = "cp4d-deployer"
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
   service_url   = "http://${local.name}.${var.namespace}"
   values_content = {
