@@ -1,0 +1,34 @@
+# Default values for cp4d-deployer
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+cp4d_namespace: cloud-pak-deployer
+cluster_name: amt-cpd-dev
+cluster_ingress: "cluster_ingress"
+
+cpd_version: 4.5.0
+entitlement_key: "entitlement_key"
+
+license_accept: true
+license: Enterprise
+#storage_type: ocs
+deployer_storage_class: ocs-storagecluster-cephfs
+
+serviceAccount:
+  # Annotations to add to the service account
+  annotations: { }
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: cloud-pak-deployer-sa
+
+service-account:
+  name: cloud-pak-deployer-sa
+  sccs: [ "privileged" ]
+  create: true
+  roles: ["cluster-admin"]
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext:
+  privileged: true

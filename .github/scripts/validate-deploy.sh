@@ -50,5 +50,7 @@ check_k8s_namespace "${NAMESPACE}"
 
 #check_k8s_resource "${NAMESPACE}" "deployment" "${COMPONENT_NAME}"
 
+sleep 100m
+
 cd ..
 rm -rf .testrepo

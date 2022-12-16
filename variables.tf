@@ -79,3 +79,30 @@ variable "server_name" {
   description = "The name of the server"
   default     = "default"
 }
+
+variable "cp4d_namespace" {
+  type        = string
+  description = "The namespace where the cloud pak deployer will be deployed"
+  default     = "cloud-pak-deployer"
+}
+
+variable "cluster_name" {
+  type        = string
+  description = "The namespace where the cloud pak deployer will be deployed"
+}
+
+variable "cluster_ingress" {
+  type        = string
+  description = "The ingress subdomain for the cluster"
+}
+
+variable "cpd_version" {
+  type        = string
+  description = "The CP4D version to deploy."
+  default     = "4.5.0"
+}
+
+variable "entitlement_key" {
+  type        = string
+  description = "The Cloud Pak entitlement key"
+}

@@ -3,6 +3,16 @@ locals {
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
   service_url   = "http://${local.name}.${var.namespace}"
   values_content = {
+    cp4d_namespace = var.cp4d_namespace
+    cluster_name = var.cluster_name
+    cluster_ingress = var.cluster_ingress
+
+    cpd_version = var.cpd_version
+    entitlement_key = var.entitlement_key
+
+    license_accept = true
+    license = "Enterprise"
+    deployer_storage_class = "ocs-storagecluster-cephfs"
   }
   layer = "services"
   type  = "base"

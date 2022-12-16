@@ -75,3 +75,10 @@ variable "kubeseal_namespace" {
 
 variable "cp_entitlement_key" {
 }
+
+variable "deployer_namespace" {
+  default = "cloud-pak-deployer"
+}
+
+variable "ingress_subdomain" {
+}
