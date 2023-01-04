@@ -10,5 +10,5 @@ module "gitops_module" {
   entitlement_key = var.cp_entitlement_key
   cluster_name = var.cluster_name
   cluster_ingress = var.ingress_subdomain
-  deployer_namespace = module.deployer_namespace.name
+  deployer_namespace = module.namespace.name
 }
