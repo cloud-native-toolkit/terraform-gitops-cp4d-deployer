@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: cloud-pak-deployer-status
-  namespace: {{ .Values.cp4d_namespace }}
+  namespace: {{ .Values.deployer_namespace }}
 spec:
   accessModes:
   - ReadWriteMany

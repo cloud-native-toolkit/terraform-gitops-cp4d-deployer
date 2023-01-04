@@ -4,7 +4,7 @@ metadata:
   labels:
     app: cloud-pak-deployer
   name: cloud-pak-deployer
-  namespace: {{ .Values.cp4d_namespace }}
+  namespace: {{ .Values.deployer_namespace }}
 spec:
   parallelism: 1
   completions: 1

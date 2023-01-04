@@ -3,7 +3,8 @@ locals {
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
   service_url   = "http://${local.name}.${var.namespace}"
   values_content = {
-    cp4d_namespace = var.cp4d_namespace
+    deployer_namespace = var.deployer_namespace
+    instance_namespace = var.instance_namespace
     cluster_name = var.cluster_name
     cluster_ingress = var.cluster_ingress
 
@@ -12,7 +13,59 @@ locals {
 
     license_accept = true
     license = "Enterprise"
-    deployer_storage_class = "ocs-storagecluster-cephfs"
+
+    deployer_storage_class = var.deployer_storage_class
+
+    #cartridges
+    scheduler =  var.install_scheduler
+    analyticsengine =  var.analyticsengine
+    bigsql =  var.install_bigsql
+    ca =  var.install_ca
+    cde =  var.install_cde
+    datagate =  var.install_datagate
+    datastage_ent_plus =  var.install_datastage-ent-plus
+    db2 =  var.install_db2
+    db2u =  var.install.db2u
+    db2wh =  var.install_db2wh
+    dmc =  var.install_dmc
+    dods =  var.install_dods
+    dp =  var.install_dp
+    dv =  var.install_dv
+    hadoop =  var.install_hadoop
+    mdm =  var.install_mdm
+    openpages =  var.install_openpages
+    planning_analytics =  var.install_planning-analytics
+    rstudio =  var.install_rstudio
+    spss =  var.install_spss
+    voice_gateway =  var.install_voice-gateway
+    watson_assistant =  var.install_watson-assistant
+    watson_discovery =  var.install_watson-discovery
+    watson_ks =  var.install_watson-ks
+    watson_openscale =  var.install_watson-openscale
+    watson_speech =  var.install_watson-speech
+    wkc =  var.install_wkc
+    wml =  var.install_wml
+    wml_accelerator =  var.install_wml-accelerator
+    wsl =  var.install_wsl
+
+
+    serviceAccount ={ 
+      annotations = { }
+      name = "cloud-pak-deployer-sa"
+    }
+
+    service-account = {
+      name = "cloud-pak-deployer-sa"
+      sccs = [ "privileged" ]
+      create = true
+      roles = ["cluster-admin"]
+    }
+
+    podSecurityContext = {}
+
+    securityContext = {
+      privileged = true
+    }
   }
   layer = "services"
   type  = "base"

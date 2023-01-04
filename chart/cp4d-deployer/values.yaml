@@ -2,7 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-cp4d_namespace: cloud-pak-deployer
+deployer_namespace: cloud-pak-deployer
+instance_namespace: cpd-instance
 cluster_name: amt-cpd-dev
 cluster_ingress: "cluster_ingress"
 
@@ -11,8 +12,39 @@ entitlement_key: "entitlement_key"
 
 license_accept: true
 license: Enterprise
-#storage_type: ocs
 deployer_storage_class: ocs-storagecluster-cephfs
+
+#cartridges
+scheduler: false
+analyticsengine: false
+bigsql: false
+ca: false
+cde: false
+datagate: false
+datastage_ent_plus: false
+db2: false
+db2u: false
+db2wh: false
+dmc: false
+dods: false
+dp: false
+dv: false
+hadoop: false
+mdm: false
+openpages: false
+planning_analytics: false
+rstudio: false
+spss: false
+voice_gateway: false
+watson_assistant: false
+watson_discovery: false
+watson_ks: false
+watson_openscale: false
+watson_speech: false
+wkc: false
+wml: false
+wml_accelerator: false
+wsl: false
 
 serviceAccount:
   # Annotations to add to the service account
