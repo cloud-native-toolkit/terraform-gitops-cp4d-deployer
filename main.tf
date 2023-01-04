@@ -18,14 +18,14 @@ locals {
 
     #cartridges
     scheduler =  var.install_scheduler
-    analyticsengine =  var.analyticsengine
+    analyticsengine =  var.install_analyticsengine
     bigsql =  var.install_bigsql
     ca =  var.install_ca
     cde =  var.install_cde
     datagate =  var.install_datagate
     datastage_ent_plus =  var.install_datastage-ent-plus
     db2 =  var.install_db2
-    db2u =  var.install.db2u
+    db2u =  var.install_db2u
     db2wh =  var.install_db2wh
     dmc =  var.install_dmc
     dods =  var.install_dods
