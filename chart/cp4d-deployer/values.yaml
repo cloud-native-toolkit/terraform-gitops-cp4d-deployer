@@ -46,21 +46,9 @@ wml: false
 wml_accelerator: false
 wsl: false
 
-serviceAccount:
-  # Annotations to add to the service account
-  annotations: { }
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: cloud-pak-deployer-sa
-
 service-account:
   name: cloud-pak-deployer-sa
   sccs: [ "privileged" ]
   create: true
-  roles: ["cluster-admin"]
-
-podSecurityContext: {}
-  # fsGroup: 2000
-
-securityContext:
-  privileged: true
+  roles: 
+  - name: "cluster-admin"

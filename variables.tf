@@ -89,7 +89,7 @@ variable "deployer_namespace" {
 variable "deployer_storage_class" {
   type        = string
   description = "Storage class to be used by the cloud pak deployer"
-  default     = "ibmc-vpc-block-general-purpose"
+  default     = "ocs-storagecluster-cephfs"
 }
 
 variable "instance_namespace" {

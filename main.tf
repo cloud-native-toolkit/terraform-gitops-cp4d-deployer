@@ -48,22 +48,13 @@ locals {
     wml_accelerator =  var.install_wml-accelerator
     wsl =  var.install_wsl
 
-
-    serviceAccount ={ 
-      name = "cloud-pak-deployer-sa"
-    }
-
     service-account = {
       name = "cloud-pak-deployer-sa"
       sccs = [ "privileged" ]
       create = true
-      roles = ["cluster-admin"]
-    }
-
-    podSecurityContext = {}
-
-    securityContext = {
-      privileged = true
+      roles = [{
+        name = "cluster-admin"
+      }]
     }
   }
   layer = "infrastructure"
