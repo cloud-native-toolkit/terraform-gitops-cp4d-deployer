@@ -50,7 +50,6 @@ locals {
 
 
     serviceAccount ={ 
-      annotations = { }
       name = "cloud-pak-deployer-sa"
     }
 
