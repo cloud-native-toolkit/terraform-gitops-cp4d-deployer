@@ -67,7 +67,7 @@ locals {
       privileged = true
     }
   }
-  layer = "services"
+  layer = "infrastructure"
   type  = "base"
   application_branch = "main"
   namespace = var.namespace
