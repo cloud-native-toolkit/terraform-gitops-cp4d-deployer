@@ -55,6 +55,7 @@ locals {
       roles = [{
         name = "cluster-admin"
       }]
+      clusterScope = true
     }
   }
   layer = "infrastructure"

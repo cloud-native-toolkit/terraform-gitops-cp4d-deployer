@@ -52,3 +52,4 @@ service-account:
   create: true
   roles: 
   - name: "cluster-admin"
+  "clusterScope": true

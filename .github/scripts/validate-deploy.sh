@@ -53,7 +53,7 @@ sleep 100m
 
 #check_k8s_resource "${NAMESPACE}" "deployment" "${COMPONENT_NAME}"
 
-sleep 100m
+sleep 120m
 
 cd ..
 rm -rf .testrepo
