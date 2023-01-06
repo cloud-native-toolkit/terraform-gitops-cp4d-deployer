@@ -86,5 +86,4 @@ The following boolean variables can be used to enable cartridges for installatio
 
 - There is a known permission issue for iterative gitops workflows.  After content within the GitOps repo is updated, the deployer job ends with a permission failure.  This module should be used for fresh installations only, until the permission issue is resolved.
 - This module supports ODF storage only.  It does not support Portworx storage.
-- Unit tests for this module only test creation of the deployer job.  They do not test the end to end deployment using the Cloud Pak Deployer, which has its own automated testing.
-- 
+- Executing `terraform destroy` with this module will cleanup the GitOps namespace, but will not automatically clean up the Cloud Pak for Data instance.
