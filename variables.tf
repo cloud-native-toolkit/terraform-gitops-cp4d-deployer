@@ -66,6 +66,7 @@ variable "git_credentials" {
 variable "namespace" {
   type        = string
   description = "The namespace where the application should be deployed"
+  default     = "cloud-pak-deployer"
 }
 
 variable "kubeseal_cert" {
@@ -78,12 +79,6 @@ variable "server_name" {
   type        = string
   description = "The name of the server"
   default     = "default"
-}
-
-variable "deployer_namespace" {
-  type        = string
-  description = "The namespace where the cloud pak deployer job will be deployed"
-  default     = "cloud-pak-deployer"
 }
 
 variable "deployer_storage_class" {

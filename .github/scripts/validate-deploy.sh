@@ -44,16 +44,11 @@ find . -name "*"
 
 set -e
 
+validate_gitops_content "${NAMESPACE}" "${LAYER}" "${SERVER_NAME}" "${TYPE}" "${COMPONENT_NAME}" "values.yaml"
 
-sleep 100m
+check_k8s_namespace "${NAMESPACE}"
 
-#validate_gitops_content "cloud-pak-deployer" "${LAYER}" "${SERVER_NAME}" "${TYPE}" "${COMPONENT_NAME}" "values.yaml"
-
-#check_k8s_namespace "${NAMESPACE}"
-
-#check_k8s_resource "${NAMESPACE}" "deployment" "${COMPONENT_NAME}"
-
-sleep 120m
+check_k8s_resource "${NAMESPACE}" "job" "cloud-pak-deployer"
 
 cd ..
 rm -rf .testrepo

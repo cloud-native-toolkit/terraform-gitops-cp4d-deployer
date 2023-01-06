@@ -3,7 +3,7 @@ locals {
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
   service_url   = "http://${local.name}.${var.namespace}"
   values_content = {
-    deployer_namespace = var.deployer_namespace
+    deployer_namespace = var.namespace
     instance_namespace = var.instance_namespace
     cluster_name = var.cluster_name
     cluster_ingress = var.cluster_ingress

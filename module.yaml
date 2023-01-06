@@ -1,8 +1,8 @@
-name: gitops-cp4d-prototype
+name: gitops-cp4d-deployer
 type: gitops
 description: >-
   Module to populate a gitops repo with the resources to provision
-  cp4d-prototype
+  IBM Cloud Pak for Data using the Cloud Pak Deployer
 tags:
   - tools
   - gitops
