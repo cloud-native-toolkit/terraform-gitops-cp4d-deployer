@@ -37,7 +37,7 @@ spec:
           mountPath: /Data/cpd-status
         command: ["/bin/sh","-xc"]
         args: 
-          - /cloud-pak-deployer/cp-deploy.sh env apply -v
+          - rm -rf $STATUS_DIR/openshift/kubeconfig; /cloud-pak-deployer/cp-deploy.sh env apply -v
       restartPolicy: Never
       securityContext:
         runAsUser: 0

@@ -31,8 +31,8 @@ This module makes use of the output from other modules:
 ## Example usage
 
 ```hcl-terraform
-module "dev_tools_argocd" {
-  source = "github.com/cloud-native-toolkit/terraform-tools-argocd.git"
+module "cp4d" {
+  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4d-deployer.git"
 
   cluster_config_file = module.dev_cluster.config_file_path
   cluster_type        = module.dev_cluster.type
@@ -40,7 +40,7 @@ module "dev_tools_argocd" {
   ingress_subdomain   = module.dev_cluster.ingress_hostname
   olm_namespace       = module.dev_software_olm.olm_namespace
   operator_namespace  = module.dev_software_olm.target_namespace
-  name                = "argocd"
+  name                = "cp4d"
   install_watson-assistant = true
   install_watson-ks   = true
   install_watson-speech = true
