@@ -3,6 +3,8 @@ apiVersion: v1
 metadata:
   name: cloud-pak-deployer-config
   namespace: {{ .Values.deployer_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-10"
 data:
   cpd-config.yaml: >+
     ---

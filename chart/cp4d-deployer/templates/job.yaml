@@ -5,6 +5,8 @@ metadata:
     app: cloud-pak-deployer
   name: cloud-pak-deployer
   namespace: {{ .Values.deployer_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   parallelism: 1
   completions: 1
