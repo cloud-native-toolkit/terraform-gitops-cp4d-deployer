@@ -50,8 +50,5 @@ check_k8s_namespace "${NAMESPACE}"
 
 check_k8s_resource "${NAMESPACE}" "job" "cloud-pak-deployer"
 
-# sleep to test gitops before cleaning it up
-sleep 120m
-
 cd ..
 rm -rf .testrepo
