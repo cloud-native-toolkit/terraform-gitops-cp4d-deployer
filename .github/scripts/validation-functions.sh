@@ -71,7 +71,7 @@ check_k8s_resource () {
   if [[ "${GITOPS_TYPE}" =~ deployment|statefulset|daemonset ]]; then
     kubectl rollout status "${GITOPS_TYPE}" "${NAME}" -n "${NS}" || exit 1
   elif [[ "${GITOPS_TYPE}" == "job" ]]; then
-    kubectl wait --for=condition=complete "job/${NAME}" -n "${NS}" --timeout=3000s || exit 1
+    kubectl wait --for=condition=complete "job/${NAME}" -n "${NS}" --timeout=5400s || exit 1
   fi
 
   echo "Done checking for resource: ${NS}/${GITOPS_TYPE}/${NAME}"

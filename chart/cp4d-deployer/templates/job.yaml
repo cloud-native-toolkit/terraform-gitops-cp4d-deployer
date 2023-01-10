@@ -5,6 +5,9 @@ metadata:
     app: cloud-pak-deployer
   name: cloud-pak-deployer
   namespace: {{ .Values.deployer_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+    checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
 spec:
   parallelism: 1
   completions: 1
@@ -14,8 +17,6 @@ spec:
       name: cloud-pak-deployer
       labels:
         app: cloud-pak-deployer
-      annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
       containers:
       - name: cloud-pak-deployer
@@ -37,7 +38,7 @@ spec:
           mountPath: /Data/cpd-status
         command: ["/bin/sh","-xc"]
         args: 
-          - /cloud-pak-deployer/cp-deploy.sh env apply -v
+          - rm -rf $STATUS_DIR/openshift/kubeconfig; /cloud-pak-deployer/cp-deploy.sh env apply -v
       restartPolicy: Never
       securityContext:
         runAsUser: 0
