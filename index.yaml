@@ -44,13 +44,6 @@ versions:
         moduleRef:
           id: gitops
           output: sealed_secrets_cert
-      - name: server_name
-        type: string
-        description: The name of the server
-        default: default
-        moduleRef:
-          id: gitops
-          output: server_name
       - name: deployer_storage_class
         type: string
         description: Storage class to be used by the cloud pak deployer
@@ -92,10 +85,6 @@ versions:
       - name: install_cde
         type: bool
         description: "Install cde cartridge"
-        default: false
-      - name: install_datagate
-        type: bool
-        description: "Install datagate cartridge"
         default: false
       - name: install_datagate
         type: bool
