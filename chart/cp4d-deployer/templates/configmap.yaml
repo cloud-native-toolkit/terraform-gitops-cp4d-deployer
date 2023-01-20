@@ -30,7 +30,7 @@ data:
     - project: cpd-instance
       openshift_cluster_name: {{ .Values.cluster_name }}
       cp4d_version: {{ .Values.cpd_version }}
-      sequential_install: True
+      sequential_install: {{ .Values.sequential_install | ternary "True" "False" }} 
       accept_licenses: {{ .Values.license_accept }}
       cartridges:
 

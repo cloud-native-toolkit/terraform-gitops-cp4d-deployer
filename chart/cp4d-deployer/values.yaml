@@ -14,6 +14,9 @@ license_accept: true
 license: Enterprise
 deployer_storage_class: ocs-storagecluster-cephfs
 
+# setting to true will deploy in sequence, taking more time. the default is to deploy in parallel
+sequential_install: false
+
 #cartridges
 scheduler: false
 analyticsengine: false
@@ -45,6 +48,7 @@ wkc: false
 wml: false
 wml_accelerator: false
 wsl: false
+
 
 service-account:
   name: cloud-pak-deployer-sa

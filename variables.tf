@@ -106,13 +106,21 @@ variable "cluster_ingress" {
 variable "cpd_version" {
   type        = string
   description = "The CP4D version to deploy."
-  default     = "4.5.0"
+  default     = "4.6.1"
 }
 
 variable "entitlement_key" {
   type        = string
   description = "The Cloud Pak entitlement key"
 }
+
+variable "sequential_install" {
+  type        = bool
+  description = "Deploy in sequence.  Default is parallel deployment"
+  default     = false
+}
+
+
 
 variable "install_scheduler" {
   type        = bool

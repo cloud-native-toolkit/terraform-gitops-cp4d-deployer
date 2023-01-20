@@ -10,6 +10,7 @@ locals {
 
     cpd_version = var.cpd_version
     entitlement_key = var.entitlement_key
+    sequential_install = var.sequential_install
 
     license_accept = true
     license = "Enterprise"
