@@ -3,7 +3,7 @@ apiVersion: batch/v1
 metadata:
   labels:
     app: cloud-pak-deployer
-  name: cloud-pak-deployer
+  name: cloud-pak-deployer-{{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum | trunc 12 }}
   namespace: {{ .Values.deployer_namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "0"
