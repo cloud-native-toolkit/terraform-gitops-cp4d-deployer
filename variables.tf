@@ -103,6 +103,12 @@ variable "cluster_ingress" {
   description = "The ingress subdomain for the cluster"
 }
 
+variable "infrastructure_type" {
+  type        = string
+  description = "The cluster infrastructure type."
+  default     = "detect"
+}
+
 variable "cpd_version" {
   type        = string
   description = "The CP4D version to deploy."
