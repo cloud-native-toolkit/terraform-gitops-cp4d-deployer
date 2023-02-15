@@ -24,6 +24,8 @@ data:
         storage_type: ocs
         ocs_storage_label: ocs
         ocs_storage_size_gb: 500
+      infrastructure:
+        type: {{ .Values.infrastructure_type }}
 
     cp4d:
 

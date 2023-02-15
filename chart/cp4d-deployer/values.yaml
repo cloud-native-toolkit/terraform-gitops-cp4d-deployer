@@ -6,6 +6,7 @@ deployer_namespace: cloud-pak-deployer
 instance_namespace: cpd-instance
 cluster_name: amt-cpd-dev
 cluster_ingress: "cluster_ingress"
+infrastructure_type: "detect"
 
 cpd_version: 4.5.0
 entitlement_key: "entitlement_key"

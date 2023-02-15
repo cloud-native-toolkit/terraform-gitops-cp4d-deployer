@@ -7,6 +7,7 @@ locals {
     instance_namespace = var.instance_namespace
     cluster_name = var.cluster_name
     cluster_ingress = var.cluster_ingress
+    infrastructure_type = var.infrastructure_type
 
     cpd_version = var.cpd_version
     entitlement_key = var.entitlement_key
