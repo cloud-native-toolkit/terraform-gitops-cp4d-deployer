@@ -5,6 +5,6 @@ description: A Helm chart to initiate CP4D deployment using the Cloud Pak Deploy
 type: application
 version: 1.0.0
 dependencies:
-  - name: service-account
+  - name: cp4d-deployer
     repository: https://charts.cloudnativetoolkit.dev/
-    version: 1.2.1
+    version: 1.0.0
