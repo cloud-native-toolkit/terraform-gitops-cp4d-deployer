@@ -51,7 +51,7 @@ check_k8s_namespace "${NAMESPACE}"
 
 count=0
 JOB=""
-until [[ ! -z "$var" ]] || [[ $count -eq 20 ]]; do
+until [[ ! -z "$JOB" ]] || [[ $count -eq 20 ]]; do
   JOB=$(oc get job -n gitops-cp4d-deployer | grep cloud-pak-deployer | head -n1 | sed -e 's/\s.*$//')
   echo "Waiting for job: cloud-pak-deployer"
 
