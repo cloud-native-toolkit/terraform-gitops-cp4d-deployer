@@ -1,6 +1,6 @@
 dependencies:
-- name: service-account
+- name: cp4d-deployer
   repository: https://charts.cloudnativetoolkit.dev/
-  version: 1.2.1
-digest: sha256:97d84414630d4793605bc0bd79e50d343631ea72fa47ba623d525335e3881414
-generated: "2023-01-05T14:10:46.114073-05:00"
+  version: 1.0.0
+digest: sha256:3a15f70e2e58affba53a6add19594ce72f3710192c98bf4af4bc59123451ec41
+generated: "2023-03-01T16:21:55.970782-05:00"

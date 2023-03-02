@@ -48,7 +48,25 @@ validate_gitops_content "${NAMESPACE}" "${LAYER}" "${SERVER_NAME}" "${TYPE}" "${
 
 check_k8s_namespace "${NAMESPACE}"
 
-check_k8s_resource "${NAMESPACE}" "job" "cloud-pak-deployer"
+
+count=0
+JOB=""
+until [[ ! -z "$JOB" ]] || [[ $count -eq 20 ]]; do
+  JOB=$(oc get job -n gitops-cp4d-deployer | grep cloud-pak-deployer | head -n1 | sed -e 's/\s.*$//')
+  echo "Waiting for job: cloud-pak-deployer"
+
+  count=$((count + 1))
+  sleep 15
+done
+
+if [[ $count -eq 20 ]]; then
+  echo "Timed out waiting for job: cloud-pak-deployer" >&2
+  exit 1
+else
+  echo "Found job: ${JOB}"
+fi
+
+check_k8s_resource "${NAMESPACE}" "job" "${JOB}"
 
 cd ..
 rm -rf .testrepo
