@@ -61,12 +61,12 @@ locals {
         clusterScope = true
       }
     }
-    layer = "infrastructure"
-    type  = "base"
-    application_branch = "main"
-    namespace = var.namespace
-    layer_config = var.gitops_config[local.layer]
   }
+  layer = "infrastructure"
+  type  = "base"
+  application_branch = "main"
+  namespace = var.namespace
+  layer_config = var.gitops_config[local.layer]
 }
 
 resource null_resource create_yaml {
